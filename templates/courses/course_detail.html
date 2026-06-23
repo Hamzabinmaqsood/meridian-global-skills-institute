@@ -7,7 +7,7 @@
         <div class="row g-4">
             <div class="col-lg-8">
                 {% if course.image %}
-                    <img src="{{ course.image.url }}" class="img-fluid rounded mb-4" alt="{{ course.title }}">
+                <img src="{{ course.image.url }}" class="img-fluid rounded mb-4" alt="{{ course.title }}">
                 {% endif %}
 
                 <h1 class="fw-bold">{{ course.title }}</h1>
@@ -28,20 +28,21 @@
                     <h4>Course Information</h4>
 
                     {% if course.category %}
-                        <p><strong>Category:</strong> {{ course.category.name }}</p>
+                    <p><strong>Category:</strong> {{ course.category.name }}</p>
                     {% endif %}
 
                     {% if course.duration %}
-                        <p><strong>Duration:</strong> {{ course.duration }}</p>
+                    <p><strong>Duration:</strong> {{ course.duration }}</p>
                     {% endif %}
 
                     {% if course.fee %}
-                        <p><strong>Fee:</strong> {{ course.fee }}</p>
+                    <p><strong>Fee:</strong> {{ course.fee }}</p>
                     {% endif %}
 
                     <p><strong>Level:</strong> {{ course.get_level_display }}</p>
 
-                    <a href="{% url 'core:contact' %}" class="btn btn-warning w-100">
+                    <a href="{% url 'core:contact' %}?course={{ course.title|urlencode }}"
+                        class="btn btn-warning w-100">
                         Apply for this Course
                     </a>
                 </div>

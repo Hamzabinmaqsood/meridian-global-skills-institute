@@ -12,6 +12,8 @@ def about(request):
 
 
 def contact(request):
+    selected_course = request.GET.get('course', '')
+
     if request.method == 'POST':
         form = InquiryForm(request.POST)
 
@@ -20,7 +22,9 @@ def contact(request):
             messages.success(request, 'Your inquiry has been submitted successfully. Our team will contact you soon.')
             return redirect('core:contact')
     else:
-        form = InquiryForm()
+        form = InquiryForm(initial={
+            'course_interested': selected_course
+        })
 
     return render(request, 'core/contact.html', {'form': form})
 
