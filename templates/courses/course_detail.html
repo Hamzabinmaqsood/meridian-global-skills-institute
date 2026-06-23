@@ -4,19 +4,49 @@
 
 <section class="py-5">
     <div class="container">
-        <h1 class="fw-bold">Course Details</h1>
+        <div class="row g-4">
+            <div class="col-lg-8">
+                {% if course.image %}
+                    <img src="{{ course.image.url }}" class="img-fluid rounded mb-4" alt="{{ course.title }}">
+                {% endif %}
 
-        <p class="text-muted">
-            Course slug: {{ slug }}
-        </p>
+                <h1 class="fw-bold">{{ course.title }}</h1>
 
-        <p>
-            Detailed course information will be added from the admin panel in the next phase.
-        </p>
+                <p class="text-muted">
+                    {{ course.short_description }}
+                </p>
 
-        <a href="{% url 'core:contact' %}" class="btn btn-warning">
-            Apply for this Course
-        </a>
+                <hr>
+
+                <div>
+                    {{ course.description|linebreaks }}
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="service-card">
+                    <h4>Course Information</h4>
+
+                    {% if course.category %}
+                        <p><strong>Category:</strong> {{ course.category.name }}</p>
+                    {% endif %}
+
+                    {% if course.duration %}
+                        <p><strong>Duration:</strong> {{ course.duration }}</p>
+                    {% endif %}
+
+                    {% if course.fee %}
+                        <p><strong>Fee:</strong> {{ course.fee }}</p>
+                    {% endif %}
+
+                    <p><strong>Level:</strong> {{ course.get_level_display }}</p>
+
+                    <a href="{% url 'core:contact' %}" class="btn btn-warning w-100">
+                        Apply for this Course
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 

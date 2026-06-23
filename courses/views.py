@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Course
 
 
 def course_list(request):
-    return render(request, 'courses/course_list.html')
+    courses = Course.objects.filter(is_active=True)
+    return render(request, 'courses/course_list.html', {'courses': courses})
 
 
 def course_detail(request, slug):
-    return render(request, 'courses/course_detail.html', {'slug': slug})
+    course = get_object_or_404(Course, slug=slug, is_active=True)
+    return render(request, 'courses/course_detail.html', {'course': course})
