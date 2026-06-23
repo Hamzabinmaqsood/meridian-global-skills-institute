@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="hero-section text-white d-flex align-items-center">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold">
+                    Build Your Future with Professional Skills
+                </h1>
+
+                <p class="lead mt-3">
+                    Meridian Global Skills Institute provides practical safety officer training,
+                    HSE guidance, exam preparation, and professional career development programs.
+                </p>
+
+                <div class="mt-4">
+                    <a href="{% url 'core:contact' %}" class="btn btn-warning btn-lg me-2">
+                        Apply Now
+                    </a>
+
+                    <a href="{% url 'courses:course_list' %}" class="btn btn-outline-light btn-lg">
+                        View Courses
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Our Main Training Areas</h2>
+            <p class="text-muted">Practical learning for safety, career growth, and global opportunities.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Safety Officer Training</h5>
+                    <p>Professional safety training for students and working professionals.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>HSE & Workplace Safety</h5>
+                    <p>Learn hazard control, risk assessment, fire safety, and workplace procedures.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>IELTS Preparation</h5>
+                    <p>Coming soon: IELTS preparation for students planning international education.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Study Abroad Guidance</h5>
+                    <p>Coming soon: admissions guidance for foreign universities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-6">
+                <h2 class="fw-bold">Why Choose Meridian?</h2>
+                <p>
+                    We focus on practical training, exam preparation, and career-focused guidance.
+                    Our goal is not only to teach theory, but to prepare students for real workplace
+                    and professional challenges.
+                </p>
+
+                <ul>
+                    <li>Experienced safety training instructor</li>
+                    <li>Paper-solving and exam guidance</li>
+                    <li>Career-focused learning approach</li>
+                    <li>Future expansion into IELTS and study abroad guidance</li>
+                </ul>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="highlight-box">
+                    <h4>Start with Safety. Grow Globally.</h4>
+                    <p>
+                        Meridian Global Skills Institute is built for learners who want practical
+                        skills, recognized training, and future-ready career guidance.
+                    </p>
+
+                    <a href="{% url 'core:contact' %}" class="btn btn-dark">
+                        Contact for Admission
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
