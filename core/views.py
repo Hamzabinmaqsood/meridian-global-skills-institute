@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from inquiries.forms import InquiryForm
-
+from courses.models import Course
+from testimonials.models import Testimonial
 
 def home(request):
-    return render(request, 'core/home.html')
+    featured_courses = Course.objects.filter(is_active=True, is_featured=True)[:3]
+    testimonials = Testimonial.objects.filter(is_active=True)[:3]
+
+    context = {
+        'featured_courses': featured_courses,
+        'testimonials': testimonials,
+    }
+
+    return render(request, 'core/home.html', context)
 
 
 def about(request):

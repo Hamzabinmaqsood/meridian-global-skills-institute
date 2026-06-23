@@ -104,4 +104,44 @@
     </div>
 </section>
 
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">What Students Say</h2>
+            <p class="text-muted">Feedback from learners and training participants.</p>
+        </div>
+
+        <div class="row g-4">
+            {% for testimonial in testimonials %}
+                <div class="col-md-4">
+                    <div class="service-card">
+                        {% if testimonial.image %}
+                            <img src="{{ testimonial.image.url }}" class="rounded-circle mb-3" width="80" height="80" alt="{{ testimonial.name }}">
+                        {% endif %}
+
+                        <h5>{{ testimonial.name }}</h5>
+
+                        {% if testimonial.role %}
+                            <p class="text-muted mb-2">{{ testimonial.role }}</p>
+                        {% endif %}
+
+                        <p>"{{ testimonial.message }}"</p>
+
+                        <p class="mb-0">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= testimonial.rating %}
+                                    ★
+                                {% endif %}
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p class="text-muted">Testimonials will be added soon.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
