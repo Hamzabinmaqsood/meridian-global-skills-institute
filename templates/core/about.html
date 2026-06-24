@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h1 class="fw-bold">About Meridian Global Skills Institute</h1>
+        <p class="lead text-muted">
+            A professional training institute focused on safety, workplace skills, career development, and global learning opportunities.
+        </p>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h2 class="fw-bold">Who We Are</h2>
+                <p>
+                    Meridian Global Skills Institute provides practical training for learners who want to build
+                    career-ready skills in safety, HSE, exam preparation, and professional development.
+                </p>
+                <p>
+                    The institute is starting with safety officer and HSE-related training, with planned expansion
+                    into IELTS preparation, study abroad admissions guidance, and leadership training.
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="highlight-box">
+                    <h4>Our Focus</h4>
+                    <ul class="mb-0">
+                        <li>Practical safety training</li>
+                        <li>Paper-solving and exam guidance</li>
+                        <li>Career-focused skills development</li>
+                        <li>Future-ready global education support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h4>Mission</h4>
+                    <p>
+                        To provide practical and career-focused training that helps students and professionals
+                        build useful skills for workplace success.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h4>Vision</h4>
+                    <p>
+                        To become a trusted training institute for safety education, professional skills,
+                        and global career pathways.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h4>Values</h4>
+                    <p>
+                        Practical learning, professionalism, student support, career growth, and continuous improvement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container text-center">
+        <h2 class="fw-bold">Start Your Training Journey</h2>
+        <p class="text-muted">
+            Contact us to learn more about available courses, admissions, and upcoming programs.
+        </p>
+
+        <a href="{% url 'core:contact' %}" class="btn btn-warning">
+            Apply Now
+        </a>
+    </div>
+</section>
+
+{% endblock %}
