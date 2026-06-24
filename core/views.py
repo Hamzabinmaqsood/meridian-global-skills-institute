@@ -3,14 +3,17 @@ from django.contrib import messages
 from inquiries.forms import InquiryForm
 from courses.models import Course
 from testimonials.models import Testimonial
+from faqs.models import FAQ
 
 def home(request):
     featured_courses = Course.objects.filter(is_active=True, is_featured=True)[:3]
     testimonials = Testimonial.objects.filter(is_active=True)[:3]
+    faqs = FAQ.objects.filter(is_active=True)[:6]
 
     context = {
         'featured_courses': featured_courses,
         'testimonials': testimonials,
+        'faqs': faqs,
     }
 
     return render(request, 'core/home.html', context)
