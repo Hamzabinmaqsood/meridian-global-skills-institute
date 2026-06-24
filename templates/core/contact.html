@@ -2,78 +2,97 @@
 
 {% block content %}
 
-<section class="py-5">
+<section class="section-padding">
     <div class="container">
-        <div class="row g-5">
+        <div class="section-title">
+            <h1 class="fw-bold">Apply Now</h1>
+            <p>Submit your inquiry and our team will contact you with course details.</p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
             <div class="col-lg-6">
-                <h1 class="fw-bold">Apply Now</h1>
+                <div class="glass-card">
+                    <h3 class="mb-3">Admission Inquiry</h3>
 
-                <p class="text-muted">
-                    Submit your inquiry and our team will contact you with course details.
-                </p>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
 
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-success">
-                            {{ message }}
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            {{ form.full_name }}
                         </div>
-                    {% endfor %}
-                {% endif %}
 
-                <form method="POST">
-                    {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Phone / WhatsApp</label>
+                            {{ form.phone }}
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Full Name</label>
-                        {{ form.full_name }}
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            {{ form.email }}
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Phone / WhatsApp</label>
-                        {{ form.phone }}
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Course Interested</label>
+                            {{ form.course_interested }}
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        {{ form.email }}
-                    </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            {{ form.message }}
+                        </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">Course Interested</label>
-                        {{ form.course_interested }}
-                    </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Message</label>
-                        {{ form.message }}
-                    </div>
-
-                    <button type="submit" class="btn btn-warning">
-                        Submit Inquiry
-                    </button>
-                </form>
+                        <button type="submit" class="btn btn-brand">
+                            Submit Inquiry
+                        </button>
+                    </form>
+                </div>
             </div>
 
             <div class="col-lg-6">
-                <div class="service-card">
+                <div class="glass-card">
+                    <div class="card-icon">☎</div>
+
                     <h3>Contact Information</h3>
 
-                    <p><strong>Institute:</strong> Meridian Global Skills Institute</p>
-                    <p><strong>Phone / WhatsApp:</strong> +92 310 0987891</p>
-                    <p><strong>Email:</strong> info@meridianglobalskillsinstitute.institute</p>
-                    <p><strong>Location:</strong> Shamsabad, near nabeena school ، apni baithak</p>
+                    <div class="mt-4">
+                        <p><strong>Institute:</strong> {{ site_name }}</p>
+                        <p><strong>Phone / WhatsApp:</strong> {{ site_phone }}</p>
+                        <p><strong>Email:</strong> {{ site_email }}</p>
+                        <p><strong>Location:</strong> {{ site_address }}</p>
+                    </div>
 
                     <hr>
 
                     <h5>Training Areas</h5>
-                    <ul>
-                        <li>Safety Officer Training</li>
-                        <li>HSE Training</li>
-                        <li>Fire Safety</li>
-                        <li>IELTS Preparation</li>
-                        <li>Study Abroad Guidance</li>
-                        <li>Leadership Training</li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>Safety Officer Training</li>
+                                <li>HSE Training</li>
+                                <li>Fire Safety</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul>
+                                <li>IELTS Preparation</li>
+                                <li>Study Abroad Guidance</li>
+                                <li>Leadership Training</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <a href="{{ site_whatsapp_url }}" target="_blank" class="btn btn-brand mt-3">
+                        Chat on WhatsApp
+                    </a>
                 </div>
             </div>
         </div>

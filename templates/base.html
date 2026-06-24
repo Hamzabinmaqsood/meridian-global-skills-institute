@@ -4,7 +4,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Meridian Global Skills Institute</title>
+
+    <title>{{ site_name }}</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Meridian Global Skills Institute offers safety officer training, HSE courses, IELTS preparation, study abroad guidance, and leadership training.">
@@ -15,18 +17,22 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg glass-navbar sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="{% url 'core:home' %}">
-            Meridian Global Skills Institute
+        <a class="navbar-brand brand-wrap" href="{% url 'core:home' %}">
+            <span class="brand-logo">M</span>
+            <span>
+                <span class="brand-title">Meridian</span>
+                <span class="brand-subtitle">Global Skills Institute</span>
+            </span>
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNavbar">
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'core:home' %}">Home</a>
                 </li>
@@ -39,20 +45,30 @@
                     <a class="nav-link" href="{% url 'courses:course_list' %}">Courses</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:ielts' %}">IELTS</a>
-                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Programs
+                    </a>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'core:study_abroad' %}">Study Abroad</a>
+                    <ul class="dropdown-menu glass-dropdown">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'core:ielts' %}">IELTS Preparation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'core:study_abroad' %}">Study Abroad</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'core:leadership' %}">Leadership Training</a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="btn btn-warning ms-lg-3" href="{% url 'core:contact' %}">
+                <li class="nav-item ms-lg-3">
+                    <a class="btn btn-brand" href="{% url 'core:contact' %}">
                         Apply Now
                     </a>
                 </li>
@@ -66,16 +82,67 @@
     {% endblock %}
 </main>
 
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container text-center">
-        <h5>Meridian Global Skills Institute</h5>
-        <p class="mb-1">Safety Training | IELTS | Study Abroad | Leadership Skills</p>
-        <p class="mb-0">© 2026 Meridian Global Skills Institute. All rights reserved.</p>
+<footer class="site-footer">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="footer-brand">
+                    <span class="brand-logo">M</span>
+                    <div>
+                        <h5>{{ site_name }}</h5>
+                        <p>
+                            Professional training for safety, skills, career growth, and global learning opportunities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-2 col-md-4">
+                <h6>Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="{% url 'core:home' %}">Home</a></li>
+                    <li><a href="{% url 'core:about' %}">About</a></li>
+                    <li><a href="{% url 'courses:course_list' %}">Courses</a></li>
+                    <li><a href="{% url 'gallery:gallery' %}">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <h6>Training Areas</h6>
+                <ul class="footer-links">
+                    <li><a href="{% url 'courses:course_list' %}">Safety Officer Training</a></li>
+                    <li><a href="{% url 'courses:course_list' %}">HSE Training</a></li>
+                    <li><a href="{% url 'core:ielts' %}">IELTS Preparation</a></li>
+                    <li><a href="{% url 'core:study_abroad' %}">Study Abroad</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-4">
+                <h6>Contact</h6>
+
+                <ul class="footer-contact">
+                    <li>{{ site_phone }}</li>
+                    <li>{{ site_email }}</li>
+                    <li>{{ site_address }}</li>
+                </ul>
+
+                <a href="{{ site_whatsapp_url }}" target="_blank" class="btn btn-brand mt-3">
+                    WhatsApp Us
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p class="mb-0">© 2026 {{ site_name }}. All rights reserved.</p>
+            <p class="mb-0">{{ site_domain }}</p>
+        </div>
     </div>
 </footer>
 
-<a href="https://wa.me/923100987891" class="whatsapp-float" target="_blank">
-    WhatsApp
+
+<a href="{{ site_whatsapp_url }}" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <span class="whatsapp-icon">●</span>
+    <span>WhatsApp</span>
 </a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
