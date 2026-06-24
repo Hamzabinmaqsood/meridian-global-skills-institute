@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="fw-bold">IELTS Preparation</h1>
+        <p class="lead text-muted">
+            IELTS preparation classes will be available soon at Meridian Global Skills Institute.
+        </p>
+
+        <a href="{% url 'core:contact' %}?course=IELTS Preparation" class="btn btn-warning">
+            Register Interest
+        </a>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Listening</h5>
+                    <p>Practice strategies for IELTS listening sections.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Reading</h5>
+                    <p>Improve speed, comprehension, and answer accuracy.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Writing</h5>
+                    <p>Learn task structure, essay planning, and scoring criteria.</p>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="service-card">
+                    <h5>Speaking</h5>
+                    <p>Build confidence for interview-style speaking tests.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

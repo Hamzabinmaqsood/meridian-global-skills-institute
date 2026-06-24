@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="fw-bold">Leadership Training</h1>
+        <p class="lead text-muted">
+            Professional leadership and workplace skills training will be launched soon.
+        </p>
+
+        <a href="{% url 'core:contact' %}?course=Leadership Training" class="btn btn-warning">
+            Register Interest
+        </a>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>Communication Skills</h5>
+                    <p>Improve professional communication, presentation, and confidence.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>Team Leadership</h5>
+                    <p>Learn practical leadership habits for teams and workplace environments.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>Professional Growth</h5>
+                    <p>Build discipline, planning, decision-making, and career-readiness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

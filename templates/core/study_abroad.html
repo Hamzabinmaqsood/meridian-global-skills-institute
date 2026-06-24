@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+    <div class="container text-center">
+        <h1 class="fw-bold">Study Abroad Guidance</h1>
+        <p class="lead text-muted">
+            Foreign university admissions guidance will be available soon.
+        </p>
+
+        <a href="{% url 'core:contact' %}?course=Study Abroad Guidance" class="btn btn-warning">
+            Register Interest
+        </a>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>University Shortlisting</h5>
+                    <p>Guidance for selecting suitable countries, universities, and programs.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>Application Support</h5>
+                    <p>Support for admissions documents, timelines, and application planning.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card">
+                    <h5>Career Pathway Advice</h5>
+                    <p>Practical guidance for aligning study plans with career goals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
